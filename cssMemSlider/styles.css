@@ -21,3 +21,73 @@ p {
   margin: 0;
   padding: 0;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  background-color: aqua;
+}
+
+.header__title {
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.slider {
+  min-height: 95vh;
+  padding: 5vh 0;
+  background-color: chocolate;
+}
+
+.slider__container {
+  max-width: 40vw;
+  min-height: 80vh;
+  margin: 0 auto;
+  padding: 0 2rem;
+  background-color: brown;
+}
+
+.slider__wrapper {
+  display: grid;
+  grid-template-areas:
+    "slide slide"
+    "title nav";
+  grid-template-columns: 10fr 4fr;
+  gap: 1rem 1rem;
+}
+
+.slider__images {
+  grid-area: slide;
+  /* height: 40vh; */
+  background-color: cornflowerblue;
+}
+
+.slider__titles {
+  grid-area: title;
+  height: 10vh;
+  background-color: crimson;
+}
+
+.slider__nav {
+  grid-area: nav;
+  height: 10vh;
+  background-color: darkgoldenrod;
+}
+
+.slider__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
