@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" href="./img/joke.ico" />
     <link rel="stylesheet" href="./styles.css" />
     <title>CSS Mem Slider</title>
@@ -15,11 +21,73 @@
     <main class="slider">
       <div class="slider__container">
         <div class="slider__wrapper">
+          <input
+            type="radio"
+            class="slider__input"
+            id="nav1"
+            type="radio"
+            name="radio"
+            hidden
+            checked
+          />
+          <label class="slider__nav" for="nav1">
+            <div class="slider__dot">
+              <div class="slider__marker marker1"></div>
+            </div>
+          </label>
+          <input
+            type="radio"
+            class="slider__input"
+            id="nav2"
+            type="radio"
+            name="radio"
+            hidden
+          />
+          <label class="slider__nav" for="nav2">
+            <div class="slider__dot">
+              <div class="slider__marker marker2"></div>
+            </div>
+          </label>
+          <input
+            type="radio"
+            class="slider__input"
+            id="nav3"
+            type="radio"
+            name="radio"
+            hidden
+          />
+          <label class="slider__nav" for="nav3">
+            <div class="slider__dot">
+              <div class="slider__marker marker3"></div>
+            </div>
+          </label>
+          <input
+            type="radio"
+            class="slider__input"
+            id="nav4"
+            type="radio"
+            name="radio"
+            hidden
+          />
+          <label class="slider__nav" for="nav4">
+            <div class="slider__dot">
+              <div class="slider__marker marker4"></div>
+            </div>
+          </label>
           <div class="slider__images">
-            <img src="./img/mem2.jpg" alt="" class="slider__img" />
+            <img src="./img/mem1.jpg" alt="joke" class="slider__img slide1" />
+            <img src="./img/mem2.jpg" alt="joke" class="slider__img slide2" />
+            <img src="./img/mem3.jpg" alt="joke" class="slider__img slide3" />
+            <img src="./img/mem4.jpg" alt="joke" class="slider__img slide4" />
           </div>
-          <div class="slider__titles"></div>
-          <div class="slider__nav"></div>
+          <div class="slider__titles">
+            <h2 class="slider__title title1">Этот момент, когда...</h2>
+            <h2 class="slider__title title2">Принятие важного решения</h2>
+            <h2 class="slider__title title3">Когда соврал на собеседовании</h2>
+            <h2 class="slider__title title4">
+              Когда решил стать программистом
+            </h2>
+          </div>
         </div>
       </div>
     </main>
