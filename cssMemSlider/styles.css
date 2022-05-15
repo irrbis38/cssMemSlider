@@ -1,4 +1,4 @@
-@import url("./normalize.css");
+@import url('./normalize.css');
 
 /*===== GENERAL STYLES =====*/
 
@@ -26,7 +26,7 @@ p {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 300;
 }
@@ -68,8 +68,8 @@ a {
 .slider__wrapper {
   display: grid;
   grid-template-areas:
-    "slide slide slide slide slide"
-    "title nav1 nav2 nav3 nav4";
+    'slide slide slide slide slide'
+    'title nav1 nav2 nav3 nav4';
   grid-template-columns: 15fr 1fr 1fr 1fr 1fr;
   gap: 1rem;
 }
@@ -77,6 +77,7 @@ a {
 .slider__images {
   grid-area: slide;
   border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 .slider__titles {
@@ -87,6 +88,7 @@ a {
   grid-area: title;
   align-content: center;
   height: 5vh;
+  overflow: hidden;
 }
 
 .slider__input {
@@ -115,6 +117,7 @@ a {
   width: 100%;
   height: auto;
   border-radius: 0.5rem;
+  animation: swingIn 1s ease 0s 1 normal forwards;
 }
 
 .slider__title {
@@ -122,6 +125,7 @@ a {
   color: #fff;
   font-weight: 300;
   font-size: 1.3rem;
+  animation: bounce 2s ease 0s 1 normal forwards;
 }
 
 .slider__nav {
@@ -156,10 +160,6 @@ a {
   background-color: #ff9866;
 }
 
-/* input:checked + label .slider__dot {
-  background-color: #333 !important;
-} */
-
 #nav1:checked ~ .slider__images .slide1,
 #nav1:checked ~ .slider__titles .title1,
 #nav1:checked + .slider__nav .marker1 {
@@ -182,4 +182,64 @@ a {
 #nav4:checked ~ .slider__titles .title4,
 #nav4:checked + .slider__nav .marker4 {
   display: block;
+}
+
+@keyframes bounce {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 1;
+    transform: translateY(-45px);
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  40% {
+    animation-timing-function: ease-in;
+    transform: translateY(-24px);
+  }
+
+  65% {
+    animation-timing-function: ease-in;
+    transform: translateY(-12px);
+  }
+
+  82% {
+    animation-timing-function: ease-in;
+    transform: translateY(-6px);
+  }
+
+  93% {
+    animation-timing-function: ease-in;
+    transform: translateY(-4px);
+  }
+
+  25%,
+  55%,
+  75%,
+  87% {
+    animation-timing-function: ease-out;
+    transform: translateY(0px);
+  }
+
+  100% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes swingIn {
+  0% {
+    opacity: 0;
+    transform: rotateX(-100deg);
+    transform-origin: top;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+    transform-origin: top;
+  }
 }
