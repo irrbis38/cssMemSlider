@@ -56,7 +56,7 @@ a {
 }
 
 .slider__container {
-  max-width: 45vw;
+  max-width: 40vw;
   min-height: 80vh;
   margin: 0 auto;
   padding: 1rem 2rem;
@@ -87,13 +87,12 @@ a {
   height: 100%;
   grid-area: title;
   align-content: center;
-  height: 5vh;
+  height: 10vh;
   overflow: hidden;
 }
 
 .slider__input {
-  align-content: center;
-  height: 5vh;
+  display: none;
 }
 
 #nav1 {
@@ -129,8 +128,8 @@ a {
 }
 
 .slider__nav {
+  height: 10vh;
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,27 +159,27 @@ a {
   background-color: #ff9866;
 }
 
-#nav1:checked ~ .slider__images .slide1,
-#nav1:checked ~ .slider__titles .title1,
-#nav1:checked + .slider__nav .marker1 {
+#input1:checked ~ .slider__images .slide1,
+#input1:checked ~ .slider__titles .title1,
+#input1:checked + .slider__nav .marker1 {
   display: block;
 }
 
-#nav2:checked ~ .slider__images .slide2,
-#nav2:checked ~ .slider__titles .title2,
-#nav2:checked + .slider__nav .marker2 {
+#input2:checked ~ .slider__images .slide2,
+#input2:checked ~ .slider__titles .title2,
+#input2:checked + .slider__nav .marker2 {
   display: block;
 }
 
-#nav3:checked ~ .slider__images .slide3,
-#nav3:checked ~ .slider__titles .title3,
-#nav3:checked + .slider__nav .marker3 {
+#input3:checked ~ .slider__images .slide3,
+#input3:checked ~ .slider__titles .title3,
+#input3:checked + .slider__nav .marker3 {
   display: block;
 }
 
-#nav4:checked ~ .slider__images .slide4,
-#nav4:checked ~ .slider__titles .title4,
-#nav4:checked + .slider__nav .marker4 {
+#input4:checked ~ .slider__images .slide4,
+#input4:checked ~ .slider__titles .title4,
+#input4:checked + .slider__nav .marker4 {
   display: block;
 }
 
@@ -241,5 +240,50 @@ a {
     opacity: 1;
     transform: rotateX(0deg);
     transform-origin: top;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .slider__container {
+    min-width: 80vw;
+    min-height: 70vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slider__container {
+    max-width: 90vw;
+  }
+
+  .slider__wrapper {
+    grid-template-areas:
+      'slide slide slide slide slide slide'
+      '. nav1 nav2 nav3 nav4 .'
+      'title title title title title title';
+    grid-template-columns: 5fr repeat(4, 1fr) 5fr;
+    gap: 1rem;
+  }
+
+  .slider__nav {
+    height: 4vh;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .slider__container {
+    max-width: 92vw;
+    padding: 0.5rem;
+  }
+
+  .slider__wrapper {
+    gap: 0.5rem 1rem;
+  }
+
+  .slider__titles {
+    height: 7vh;
+  }
+
+  .slider__title {
+    font-size: 1rem;
   }
 }
