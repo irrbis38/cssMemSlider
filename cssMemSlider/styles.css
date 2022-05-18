@@ -1,4 +1,4 @@
-@import url('./normalize.css');
+@import url("./normalize.css");
 
 /*===== GENERAL STYLES =====*/
 
@@ -9,9 +9,7 @@ html {
   background: linear-gradient(to right, #ff5e62, #ff9966);
 }
 
-*,
-::after,
-::before {
+* {
   box-sizing: inherit;
 }
 
@@ -26,7 +24,7 @@ p {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 300;
 }
@@ -68,8 +66,8 @@ a {
 .slider__wrapper {
   display: grid;
   grid-template-areas:
-    'slide slide slide slide slide'
-    'title nav1 nav2 nav3 nav4';
+    "slide slide slide slide slide"
+    "title nav1 nav2 nav3 nav4";
   grid-template-columns: 15fr 1fr 1fr 1fr 1fr;
   gap: 1rem;
 }
@@ -145,6 +143,7 @@ a {
   align-items: center;
   background-color: #fff;
   border-radius: 50%;
+  transition: all 0.1s linear;
 }
 
 .slider__marker {
@@ -181,6 +180,22 @@ a {
 #input4:checked ~ .slider__titles .title4,
 #input4:checked + .slider__nav .marker4 {
   display: block;
+}
+
+#input1:active + .slider__nav .dot1 {
+  background-color: #ff5e62;
+}
+
+#input2:active + .slider__nav .dot2 {
+  background-color: #ff5e62;
+}
+
+#input3:active + .slider__nav .dot3 {
+  background-color: #ff5e62;
+}
+
+#input4:active + .slider__nav .dot4 {
+  background-color: #ff5e62;
 }
 
 @keyframes bounce {
@@ -257,9 +272,9 @@ a {
 
   .slider__wrapper {
     grid-template-areas:
-      'slide slide slide slide slide slide'
-      '. nav1 nav2 nav3 nav4 .'
-      'title title title title title title';
+      "slide slide slide slide slide slide"
+      ". nav1 nav2 nav3 nav4 ."
+      "title title title title title title";
     grid-template-columns: 5fr repeat(4, 1fr) 5fr;
     gap: 1rem;
   }
